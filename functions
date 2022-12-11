@@ -1,1 +1,29 @@
+hrs = input('Enter hours:')
+rte = input('Enter rate:')
+int_hrs = int(hrs)
+normal_hrs = 40
+float_rte = float(rte)
 
+
+def normal_pay(normal_hrs, float_rte):
+    pay = normal_hrs * float_rte
+    return pay
+
+
+def overtime_pay(int_hrs, float_rte, normal_hrs):
+    if int_hrs > normal_hrs:
+        hrs_overtime = int_hrs - normal_hrs
+    rte_overtime = 1.5 * float_rte
+    extra_pay = rte_overtime * hrs_overtime
+    return extra_pay
+
+
+def computepay(int_hrs, float_rte, normal_hrs):
+    usual_pay = normal_pay(normal_hrs, float_rte)
+    pay_overtime = overtime_pay(int_hrs, float_rte, normal_hrs)
+    if int_hrs > normal_hrs:
+        pay_sum = usual_pay + pay_overtime
+        print("Pay " + str(pay_sum))
+ 
+    
+computepay(int_hrs, float_rte, normal_hrs)
