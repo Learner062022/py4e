@@ -1,1 +1,20 @@
-
+name = input("Enter file:")
+if len(name) < 1:
+    name = "mbox-short.txt"
+handle = open(name)
+counts = dict()
+for line in handle:
+    if 'From' in line:
+        lines = line.split()
+        if 'From' in lines:
+            distributions = lines[-2]
+            times = distributions.split(':')
+            hours = times[0]
+            if hours not in counts:
+                counts[hours] = 1
+            else:
+                counts[hours] += 1
+lst = list(counts.keys())
+lst.sort()
+for key in lst:
+    print(key, counts[key])
