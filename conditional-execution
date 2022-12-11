@@ -1,1 +1,12 @@
-
+hrs = input("Enter Hours:")
+rte = input("Enter Rate:")
+int_hrs = int(hrs)
+float_rte = float(rte)
+rte_pay = 10.50
+normal_hrs = 40
+hrs_overtime = int_hrs - normal_hrs
+rte_overtime = 1.5 * rte_pay
+pay_normal = rte_pay * normal_hrs
+pay_overtime = (rte_overtime * hrs_overtime) + pay_normal
+if int_hrs > 40:
+    print(pay_overtime)
