@@ -3,5 +3,5 @@ print('Hello', name)
 
 hrs = input("Enter Hours:")
 rte = input("Enter Rate:")
-gross_pay = float(hrs) * float(rte)
+pay = float(hrs) * float(rte)
 print('Pay:',gross_pay)
