@@ -1,1 +1,5 @@
-
+text = "X-DSPAM-Confidence:    0.8475"
+init_index_num = text.find(str(0.8475))
+lst_index_num = text.index('5') + 1
+extracted_num = float(text[init_index_num:lst_index_num])
+print(extracted_num)
