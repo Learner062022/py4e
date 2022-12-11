@@ -1,1 +1,17 @@
-
+fname = input("Enter file name: ")
+fh = open(fname)
+total = 0
+num_values = 0
+lst_averages = []
+for line in fh:
+    if line.startswith("X-DSPAM-Confidence:"):
+        num_values += 1
+        index_colon = line.find(':')
+        index_whitespace = index_colon + 1
+        index_last_char = line.find(line[-1]) + 1
+        str_value = line[index_whitespace:index_last_char]
+        float_value = float(str_value)
+        total += float_value
+        averages = total / num_values
+        lst_averages.append(averages)
+print("Average spam confidence: " + str(lst_averages[-1]))
