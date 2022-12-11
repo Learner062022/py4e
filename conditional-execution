@@ -10,3 +10,19 @@ pay_normal = rte_pay * normal_hrs
 pay_overtime = (rte_overtime * hrs_overtime) + pay_normal
 if int_hrs > 40:
     print(pay_overtime)
+
+score = input("Enter Score: ")
+if float(score) < 0.0:
+    print('The score is out of range.')
+elif float(score) > 1.0:
+    print('The score is out of range.')
+elif float(score) >= 0.9:
+    print('A')
+elif float(score) >= 0.8:
+    print('B')
+elif float(score) >= 0.7:
+    print('C')
+elif float(score) >= 0.6:
+    print('D')
+elif float(score) < 0.6:
+    print('F')
