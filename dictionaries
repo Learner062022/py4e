@@ -1,1 +1,15 @@
-
+handle = open("mbox-short.txt")
+emails = dict()
+for lines in handle:
+    if 'From:' in lines:
+        splits = lines.split()
+        person = splits[1]
+        if person not in emails:
+            emails[person] = 1
+        else:
+            emails[person] += 1
+numbers = emails.values()
+largest = max(numbers)
+for key in emails:
+    if emails[key] == largest:
+        print(key, emails[key])
